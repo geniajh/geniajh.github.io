@@ -1,0 +1,296 @@
+.noto-sans-kr-400 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-serif-kr-400 {
+  font-family: "Noto Serif KR", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inconsolata-400 {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+:root {
+  --blue: #0D47A1;
+  --yellow: #FFAB00;
+  --red: #B71C1C;
+  --teal: #00BFA5;
+  --white: #ffffff;
+  --black: #111111;
+  --dark-grey: #707070;
+  --light-grey: #cccccc;
+  --main-width: 700px;
+  --nav-width: 100px;
+  --header-height: 50px;
+  --h2-width:  130px;
+}
+
+* {
+  margin: 0;
+  padding: 0;  /* We disable it for now as we do not know how to control the spacings of lists. */
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--dark-grey);
+  background-color: var(--white);
+  font-size: 17px;
+  font-family: serif;
+  line-height: 1.24em;
+  
+}
+
+.header-container {
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--white);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: var(--white);
+  width: var(--main-width);
+  border-bottom: 2px solid var(--black);
+  margin: 0 0 5px 0;
+  /*display: flex;
+  justify-content: space-between;
+  width: 700px;
+  border-bottom: 2px solid;
+  margin: 15px auto 5px auto;*/
+}
+
+h1 {
+  font-size: 1.8em;
+  padding: 2px 2px 7px 2px;  /* Top  Right  Bottom  Left */
+  /* margin: 5px 0px 5px 0px; */
+}
+
+nav {
+  position: fixed;
+  top: var(--header-height);
+  left: calc(calc(50%) + 0.5 * var(--main-width) + 6px);
+  width: var(--nav-width);
+  display: flex;
+  background-color: var(--white);
+}
+
+nav > ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+nav > ul > li {
+  padding: 2px;
+  border-bottom: 2px solid var(--light-grey);
+}
+
+nav > ul > li:last-child {
+  border-bottom: none;
+}
+
+.page-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: calc(var(--header-height) + 2px) auto 0px auto;
+}
+
+section {
+  display: flex;
+  justify-content: flex-start;
+  width: var(--main-width);
+  margin: 1px;
+  padding: 2px 2px 2px 2px;  /* Top  Right  Bottom  Left */
+}
+
+section > h2 {
+  width: var(--h2-width);
+  padding: 4px 0px 2px 2px;  /* Top  Right  Bottom  Left */
+  font-size: 1.3em;
+}
+
+.portrait {
+  width: 124px;
+  box-sizing: border-box;  /* Add this */
+}
+
+section > .section-main {
+  padding: 2px;
+  width: calc(var(--main-width) - var(--h2-width));
+  /* flex: 1 1 auto; */
+}
+
+section > .section-main > p {
+  padding: 0px 0px 0px 0.5rem;
+}
+
+section > .section-main > ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+section > .section-main > ol {
+  padding-left: 2rem;
+}
+
+.section-main > ol > li,
+.section-main > ul > li {
+  margin-bottom: 4px;
+}
+
+.section-main > ol > li:last-child {
+  margin-bottom: 10px;
+}
+
+.section-main > ul > li:last-child {
+  margin-bottom: 10px;
+}
+
+span.student-name {
+  display: inline-block;
+  width: 140px;
+}
+
+h3 {
+  padding: 2px 0px 4px 10px;  /* Top  Right  Bottom  Left */
+  font-size: 1.1em;
+  // font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+/* https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header */
+a.anchor {
+    display: block;
+    position: relative;
+    top: calc(0px - var(--header-height));
+    visibility: hidden;
+}
+
+a.paper {
+  font-style: italic;
+  /* font-weight: bold; */
+}
+
+p {
+  padding: 2px 2px 2px 2px;
+  margin-bottom: 5px; 
+}
+
+ul {
+  list-style-type: circle;
+}
+
+ol {
+}
+
+li {
+  /* margin-bottom: 2px; */
+}
+
+.isca {
+  color: var(--yellow);
+}
+
+.hpca {
+  color: var(--blue);
+}
+
+.micro {
+  color: var(--red);
+}
+
+.asplos {
+  color: var(--teal);
+}
+
+code {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: var(--black);
+}
+
+/* set the background color to black when client requests dark mode and 
+ * invert the colors from post by user lewisl9029:
+ * https://news.ycombinator.com/item?id=26472246
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blue: #2196F3;
+    --yellow: #FBC02D;
+    --red: #F44336;
+    --teal: #64FFDA;
+    --white: #000000;
+    --black: #eeeeee;
+    --dark-grey: #aaaaaa;
+    --light-grey: #404040;
+    --main-width: 700px;
+    --nav-width: 100px;
+    --header-height: 50px;
+    --h2-width:  130px;
+  }
+}
+
+
+@media only screen and (max-width: calc(700px + 2 * 120px - 1px))  {
+  nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: calc(700px)) {
+  section {
+    width: 100%;
+    flex-direction: column;
+  }
+  section > h2 {
+    width: 100%;
+  }
+  section > .section-main {
+    width: 100%;
+  }
+}
+
+@media print {
+  /* All your print styles go here */
+  footer,
+  nav {
+    display: none !important;
+  }
+  .header-container {
+    position: static;
+  }
+  .page-container {
+    margin: 2px auto 0px auto;
+  }
+}
