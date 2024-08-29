@@ -30,7 +30,7 @@
   --dark-grey: #707070;
   --light-grey: #cccccc;
   --main-width: 700px;
-  --nav-width: 100px;
+  --nav-width: 110px;
   --header-height: 50px;
   --h2-width:  130px;
 }
@@ -103,7 +103,10 @@ nav > ul > li {
 }
 
 nav > ul > li:last-child {
+  display: flex;
+  justify-content: flex-start;
   border-bottom: none;
+  padding: 4px 2px 2px 2px;
 }
 
 .page-container {
@@ -231,6 +234,30 @@ li {
   color: var(--teal);
 }
 
+a > .dblp {
+  height: 20px;
+  padding: 0px 3px 0px 0px;
+}
+
+a > .googlescholar {
+  height: 20px;
+  padding: 0px 3px;
+}
+
+a > .orcid {
+  height: 20px;
+  padding: 0px 3px;
+}
+
+a > .linkedin {
+  height: 20px;
+  padding: 0px 3px;
+}
+
+footer > .copyright {
+  padding: 0px 5px;
+}
+
 code {
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
@@ -238,6 +265,17 @@ code {
   font-style: normal;
   font-variation-settings: "wdth" 100;
   color: var(--black);
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--white);
+  width: var(--main-width);
+  border-top: 2px solid var(--black);
+  padding: 4px 2px 7px 2px;  /* Top  Right  Bottom  Left */
+  margin: 0 0 5px 0;
 }
 
 /* set the background color to black when client requests dark mode and 
@@ -254,10 +292,6 @@ code {
     --black: #eeeeee;
     --dark-grey: #aaaaaa;
     --light-grey: #404040;
-    --main-width: 700px;
-    --nav-width: 100px;
-    --header-height: 50px;
-    --h2-width:  130px;
   }
 }
 
