@@ -69,11 +69,6 @@ header {
   width: var(--main-width);
   border-bottom: 2px solid var(--black);
   margin: 0 0 5px 0;
-  /*display: flex;
-  justify-content: space-between;
-  width: 700px;
-  border-bottom: 2px solid;
-  margin: 15px auto 5px auto;*/
 }
 
 h1 {
@@ -303,6 +298,12 @@ footer {
 }
 
 @media only screen and (max-width: calc(700px)) {
+  .header-container {
+    justify-content: start;
+  }
+  header {
+    width: 100%;
+  }
   section {
     width: 100%;
     flex-direction: column;
@@ -311,6 +312,9 @@ footer {
     width: 100%;
   }
   section > .section-main {
+    width: 100%;
+  }
+  footer {
     width: 100%;
   }
 }
