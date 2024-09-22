@@ -48,7 +48,7 @@ body {
   font-size: 17px;
   font-family: 'Times', 'Times New Roman', serif;
   line-height: 1.26em;
-  
+  hyphens: auto;
 }
 
 .header-container {
@@ -94,7 +94,7 @@ nav > ul {
 }
 
 nav > ul > li {
-  padding: 2px;
+  padding: 2px 2px 2px 6px;
   border-bottom: 2px solid var(--light-grey);
 }
 
