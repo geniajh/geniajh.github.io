@@ -16,7 +16,15 @@
     <link rel='stylesheet' href='../styles.css'/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" media='(prefers-color-scheme: dark)' href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.css"/>
+    <link rel="stylesheet" media='(prefers-color-scheme: light)' href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+
+<script>hljs.highlightAll();</script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -26,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content goes here -->
     <div class='header-container'>
       <header>
-        <h1><a href='../index.html'>Jung Ho Ahn</a></h1>
+        <h1><a href='../'>Jung Ho Ahn</a></h1>
         <p><time datetime='2024-12-14'>Dec 14th, 2024</p>
       </header>
     </div>
@@ -62,14 +70,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>The list has not been updated since 2019, whereas the number of total <span class='micro'>MICRO</span>/<span class='isca'>ISCA</span>/<span class='asplos'>ASPLOS</span>/<span class='hpca'>HPCA</span> papers that have been published per year have increased steadily, surpassing 400 in 2024.
           That means there have been more hall of fame inductees since 2020.
           Even if there might have been efforts to make the list up to date, I have not witnessed an active effort as of now.</p>
-        </div>
-      </section>
 
-      <section>
-        <h2><a href='https://sparql.dblp.org/zpJt0l'>A SPARQL query</a>
-        </h2>
-        <div class='section-main'>
-          <p>I made <a href="https://sparql.dblp.org/zpJt0l?exec=true" target='_blank'>one</a> exploiting the <a href='https://sparql.dblp.org/' target='_blank'>dblp SPARQL query service</a>.
+         <p>I made <a href="https://sparql.dblp.org/zpJt0l?exec=true" target='_blank'>one</a> exploiting the <a href='https://sparql.dblp.org/' target='_blank'>dblp SPARQL query service</a>.
           It is far from being 100% accurate, but stable enough to share it with others. 
           Thanks to dblp, this list will be automatically updated as more papers are published in the future. 
           Please enjoy and remember that &ldquo;<a href='https://pages.cs.wisc.edu/~arch/www/iscabibhall.html' target='_blank'>A real Hall of Fame should be determined by impact, not paper count</a>.&rdquo;</p>
@@ -77,12 +79,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </section>
 
       <section>
-        <h2>2024 inductees
+        <h2>2024<br/> inductees
         </h2>
         <div class='section-main'>
           <p>Following eight researchers were inducted this year (2024):
             Tor M. Aamodt,
-            <a href='../index.html'>Jung Ho Ahn</a>,
+            <a href='../'>Jung Ho Ahn</a>,
             Christopher W. Fletcher,
             Daniel A. Jiménez,
             Hyesoon Kim,
@@ -90,6 +92,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             G. Edward Suh, and
             Gu-Yeon Wei.</p>
        </div>
+      </section>
+
+      <section>
+        <h2><a href='https://sparql.dblp.org/zpJt0l'>A SPARQL query</a>
+        </h2>
+        <div class='section-main'>
+          <!-- used html escape -->
+          <pre><code class="language-sql"># Frequent authors of HPCA/ASPLOS/ISCA/MICRO
+# https://sparql.dblp.org/
+PREFIX dblp: &lt;https://dblp.org/rdf/schema#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?name ?affiliation (COUNT(DISTINCT ?publ) as ?freq) (?pers as ?dblp) (SAMPLE(?orcids) as ?orcid) WHERE {
+  VALUES ?stream { &lt;https://dblp.org/streams/conf/hpca&gt; &lt;https://dblp.org/streams/conf/asplos&gt; &lt;https://dblp.org/streams/conf/isca&gt; &lt;https://dblp.org/streams/conf/micro&gt; } .
+  ?publ dblp:publishedInStream ?stream .
+  ?publ dblp:publishedIn ?publishedin .
+  ?publ dblp:authoredBy ?pers .
+  ?pers rdfs:label ?name .
+  ?publ dblp:title ?title .
+  ?publ dblp:pagination ?pagination .
+  # ?publ dblp:yearOfPublication ?year . 
+  FILTER(!REGEX(STR(?title), &quot;Message from the&quot;))  # To remove welcome messages
+  FILTER(REGEX(STR(?publishedin), &quot;^ASPLOS|^ISCA|^HPCA|^MICRO&quot;))  # To remove workshop/retrospective/reprint articles
+  FILTER(REGEX(STR(?pagination), &quot;-&quot;))  # To eliminate single-page articles (e.g., keynote abstract)
+  # FILTER(?year &lt; &quot;2020&quot;^^xsd:gYear)  # To debug with a manual result from https://moin.ece.gatech.edu/cathof.html
+  OPTIONAL { ?pers dblp:primaryAffiliation ?affiliation . }
+  OPTIONAL { ?pers dblp:orcid ?orcids . }
+}
+GROUP BY ?name ?affiliation ?pers
+HAVING (?freq &gt;= 32)  # https://moin.ece.gatech.edu/cathof.html
+ORDER BY DESC(?freq)</code></pre>
+        </div>
       </section>
 
       <footer>
