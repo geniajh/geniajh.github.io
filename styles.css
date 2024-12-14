@@ -122,6 +122,12 @@ section {
   padding: 2px 2px 2px 2px;  /* Top  Right  Bottom  Left */
 }
 
+section > h1 {
+  width: 100%;
+  padding: 4px 0px 2px 2px;  /* Top  Right  Bottom  Left */
+  font-size: 1.3em;
+}
+
 section > h2 {
   width: var(--h2-width);
   padding: 4px 0px 2px 2px;  /* Top  Right  Bottom  Left */
