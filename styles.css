@@ -105,7 +105,7 @@ nav > ul > li:last-child {
   padding: 4px 2px 2px 2px;
 }
 
-.page-container {
+.page-container, .blog-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -122,16 +122,25 @@ section {
   padding: 2px 2px 2px 2px;  /* Top  Right  Bottom  Left */
 }
 
+.blog-container > section {
+  flex-direction: column;
+}
+
 section > h1 {
   width: 100%;
-  padding: 4px 0px 2px 2px;  /* Top  Right  Bottom  Left */
-  font-size: 1.3em;
+  padding: 4px 0px 8px 2px;  /* Top  Right  Bottom  Left */
+  font-size: 1.33em;
 }
 
 section > h2 {
   width: var(--h2-width);
   padding: 4px 0px 2px 2px;  /* Top  Right  Bottom  Left */
   font-size: 1.3em;
+}
+
+.blog-container > section > .section-main,
+.blog-container > section > h2 {
+  width: 100%;
 }
 
 .portrait {

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Jung Ho Ahn - Post 2024/11/04</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NPDWL48G');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Metadata goes here -->
+    <meta charset='UTF-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../styles.css'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" media='(prefers-color-scheme: dark)' href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.css"/>
+    <link rel="stylesheet" media='(prefers-color-scheme: light)' href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPDWL48G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- Content goes here -->
+    <div class='header-container'>
+      <header>
+        <h1><a href='../'>Jung Ho Ahn</a></h1>
+        <p><time datetime='2024-11-04'>Nov 4th, 2024</p>
+      </header>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href='202412-hall-of-fame.html'>2024/12/14</a></li>
+        <li>2024/11/04</li>
+        <li>
+          <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
+          <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
+          <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
+          <a href='https://kr.linkedin.com/in/jung-ho-ahn-9876748' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png' class='linkedin'/></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class='blog-container'>
+      <section>
+        <h1>
+          One paper accepted at <span class='hpca'>HPCA</span> 2025
+        </h1>
+      </section>
+
+      <section>
+        <div class='section-main'>
+          <p>Thrilled to announce that our research group (<a href='https://scale.snu.ac.kr' target='_blank'>scale@snu</a>) kicks off 2025 with a paper accepted at <a href='https://hpca-conf.org/2025/' target='_blank'>HPCA</a> (besides two conditionally accepted papers @ <a href='https://www.asplos-conference.org/asplos2025/' target='_blank'>ASPLOS 2025</a>). All streaks will end; but we are still enjoying a streak, 11 in a row, of publishing at least one paper to <span class='isca'>ISCA</span>/<span class='micro'>MICRO</span>/<span class='hpca'>HPCA</span> since <span class='micro'>MICRO</span> 2021. <span class='micro'>MICRO</span>#4 (TRiM) - <span class='hpca'>HPCA</span>#10 (Mithril) - <span class='isca'>ISCA</span>#9 (BTS) - <span class='micro'>MICRO</span>#5 (ARK) - <span class='hpca'>HPCA</span>#11 (SHADOW) - <span class='isca'>ISCA</span>#10 (SHARP) - <span class='micro'>MICRO</span>#6/#7 (Cube/CXL-DRAM) - <span class='hpca'>HPCA</span>#12 (CXL-PNM) - <span class='isca'>ISCA</span>#11/#12 (DRAMScope/ND$) - <span class='micro'>MICRO</span>#8 (Duplex) - <span class='hpca'>HPCA</span>#13 (Anaheim).</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Anaheim</h2>
+        <div class='section-main'>
+          <p>In this Anaheim paper (&ldquo;<a class='paper'>Anaheim: Architecture and Algorithms for Processing Fully Homomorphic Encryption in Memory</a>&rdquo;), we investigated the role of NDP/PIM (near data processing, processing in memory) in accelerating FHE (fully homomorphic encryption, the CKKS scheme in particular). For this purpose, we first rewrote a GPU library for the CKKS FHE, called <a class='paper' href='https://arxiv.org/abs/2407.13055'>Cheddar</a> (it is substantially better than what we have developed and published through <a class='paper' href='https://tches.iacr.org/index.php/TCHES/article/view/9062'>the 100x paper</a>; it is arxived as of now, but we hope that it will be peer-reviewed soon as well).</p>
+
+          <p>Through this refactoring process, we identified that an optimized GPU implementation leaves quite a bit of room for further enhancement by exploiting NDP/PIM. This is because over half of the execution time is bottlenecked by memory-intensive kernels, mostly performing element-wise operations. We believe that FHE acceleration can take advantages of NDP/PIM, which is well aligned with the trendy buzzwords, such as Custom HBM and LPDDR-PIM (On a related note, I am taking a sabbatical at Samsung DS now; I am more than glad to have a coffee or lunch with many of the Samsung employees who know me directly/indirectly!).</p>
+
+          <p>Anaheim follows the trilogy papers from my group regarding CKKS acceleration -- <a class='paper' href='https://doi.org/10.1145/3470496.3527415'>BTS</a>/<a class='paper' href='https://drive.google.com/file/d/1prQuf0OLdBPNEkhD88fhLT3Wx_36_rLM/view?usp=sharing'>ARK</a>/<a class='paper' href='https://doi.org/10.1145/3579371.3589053'>SHARP</a> (<a class='paper' href='https://arxiv.org/abs/2308.04890'>CiFHER</a> might have shared its position constituting a quad, but we will work on further advancements regarding chiplet for FHE acceleration). However, Anaheim takes a bit different stance as it leverages existing GPUs for compute-intensive operations.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Acknowledgement</h2>
+        <div class='section-main'>
+          <p>I appreciate the heroic efforts led by Jongmin Kim, the first author of Anaheim (and <a class='paper' href='https://drive.google.com/file/d/1prQuf0OLdBPNEkhD88fhLT3Wx_36_rLM/view?usp=sharing'>ARK</a>/<a class='paper' href='https://doi.org/10.1145/3579371.3589053'>SHARP</a>), and the team (Sungmin Yun, Hyesung Ji, Wonseok Choi, and Sangpyo Kim). He and the gang turned an ambiguous idea and an ambitious goal set by me into a gem. The critical and constructive comments given by the reviewers and the extensive revision efforts made by the team turned the lukewarm review scores into all positive ones. I truly hope that the efforts made by us and the other computer architecture community help homomorphic encryption approaching a broader acceptance.</p>
+        </div>
+      </section>
+
+      <footer>
+        <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
+        <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
+        <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
+        <a href='https://kr.linkedin.com/in/jung-ho-ahn-9876748' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png' class='linkedin'/></a>
+        <div class='copyright'>&copy; Jung Ho Ahn</div>
+      </footer>
+
+    </div>
+  </body>
+</html>
+
