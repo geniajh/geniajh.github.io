@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>Jung Ho Ahn - Post 2024/11/01</title>
+    <title>Jung Ho Ahn - Post 2024/08/31</title>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -35,7 +35,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='header-container'>
       <header>
         <h1><a href='../'>Jung Ho Ahn</a></h1>
-        <p><time datetime='2024-11-01'>Nov 1st, 2024</p>
+        <p><time datetime='2024-08-31'>Aug 31st, 2024</p>
       </header>
     </div>
 
@@ -43,8 +43,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul>
         <li><a href='202412-hall-of-fame.html'>2024/12/14</a></li>
         <li><a href='202411-hpca-anaheim.html'>2024/11/04</a></li>
-        <li>2024/11/01</li>
-        <li><a href='202408-micro-duplex.html'>2024/08/31</a></li>
+        <li><a href='202411-micro-hof.html'>2024/11/01</a></li>
+        <li>2024/08/31</li>
         <li>
           <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
           <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
@@ -57,25 +57,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='blog-container'>
       <section>
         <h1>
-          Inducted into the <a href='https://www.sigmicro.org/awards/microhof.php' target='_blank'>ACM SIGMICRO <span class='micro'>MICRO</span> Hall of Fame</a>
+          One paper accepted at <span class='micro'>MICRO</span> 2024
         </h1>
       </section>
 
       <section>
         <div class='section-main'>
-          <p>I have been inducted into the ACM SIGMICRO MICRO Hall of Fame. It has been a while since I published <a class='paper' href='https://dl.acm.org/doi/10.1145/1669112.1669172?cid=81100339570'>my first MICRO paper in 2009</a>. As usual, all the credits must be awarded to my brilliant colleagues!</p>
+          <p>Today marks my last day as Dean of the <a href='https://convergence.snu.ac.kr/' target='_blank'>Graduate School of Convergence Science and Technology</a> at <a href='https://www.snu.ac.kr' target='_blank'>Seoul National University</a>. It's been an honor to represent our school these past two years. While I'm filled with mixed emotions, I'm excited to return to my role as a professor and start a new chapter. I'm thrilled to share that my eighth paper has been accepted at <span class='micro'>MICRO</span> 2024! This research on accelerating large language models (with a mixture of experts and grouped query attention) wouldn't have been possible without my students and collaborators at Samsung. Looking forward to seeing many of you in <a href='https://microarch.org/micro57/' target='_blank'>Austin this November</a>!</p>
         </div>
       </section>
 
       <section>
-        <h2>My <span class='micro'>MICRO</span> co-authors (as of 2024)</h2>
+        <h2><a class='paper' href='https://arxiv.org/abs/2409.01141'>Duplex</a></h2>
         <div class='section-main'>
-          <p><a href='../index.html#bhkim'>Byeongho Kim</a> (&times;2), Chihun Song, Dean Tullsen, <a href='../index.html#ejlee'>Eojin Lee</a> (&times;3), Gina Sohn, Gwangho Lee, Hadi Asghari Moghaddam, Houxiang Ji, Hwayong Nam, Ipoom Jeong, Jae W. Lee, Jaehyun Park (&times;2), <a href='../index.html#jwchoi'>Jaewan Choi</a>, Jaeyoung Choi, Jay Brockman, Jiaqi Lou, Jinghan Huang, John Kim, Jongmin Kim (&times;2), Juhwan Cho, Kwanhee Kyung, Kyomin Sohn, Michael Jaemin Kim, Minbok Wi, Minsoo Rhu (&times;2), Nam Sung Kim (&times;3), Norm Jouppi, Reese Kuper, Ren Wang, Richard D. Strong, Sangpyo Kim, Seoyoung Ko, Sheng Li, Siddharth Agarwal, <a href='../index.html#shlee'>Sukhan Lee</a>, Sungmin Yun (&times;2), <a href='https://taejunham.github.io/' target='_blank'>Tae Jun Ham</a>, Tianyin Xu, Woosuk Kwon, Yan Sun, Yeonhong Park, Yifan Yuan, <a href='../index.html#yhson'>Young Hoon Son</a>, and Zeduo Yu</p>
+          <h3>Title</h3>
+          <p>Duplex: A Device for Large Language Models with Mixture of Experts, Grouped Query Attention, and Continuous Batching</p>
+
+          <h3>Authors</h3>
+          <p>Sungmin Yun, Kwanhee Kyung, Juhwan Cho, <a href='../index.html#jwchoi'>Jaewan Choi</a>, Jongmin Kim, <a href='../index.html#bhkim'>Byeongho Kim</a>, <a href='../index.html#shlee'>Sukhan Lee</a>, Kyomin Sohn, and Jung Ho Ahn</p>
+
+          <h3>Abstract</h3>
+          <p>Large language models (LLMs) have emerged due to their capability to generate high-quality content across diverse contexts. To reduce their explosively increasing demands for computing resources, a mixture of experts (MoE) has emerged. The MoE layer enables exploiting a huge number of parameters with less computation. Applying state-of-the-art continuous batching increases throughput; however, it leads to frequent DRAM access in the MoE and attention layers. We observe that conventional computing devices have limitations when processing the MoE and attention layers, which dominate the total execution time and exhibit low arithmetic intensity (Op/B). Processing MoE layers only with devices targeting low-Op/B such as processing-in-memory (PIM) architectures is challenging due to the fluctuating Op/B in the MoE layer caused by continuous batching.</p>
+          <p>To address these challenges, we propose Duplex, which comprises xPU tailored for high-Op/B and Logic-PIM to effectively perform low-Op/B operation within a single device. Duplex selects the most suitable processor based on the Op/B of each layer within LLMs. As the Op/B of the MoE layer is at least 1 and that of the attention layer has a value of 4–8 for grouped query attention, prior PIM architectures are not efficient, which place processing units inside DRAM dies and only target extremely low-Op/B (under one) operations. Based on recent trends, Logic-PIM adds more through-silicon vias (TSVs) to enable high-bandwidth communication between the DRAM die and the logic die and place powerful processing units on the logic die, which is best suited for handling low-Op/B operations ranging from few to a few dozens. To maximally utilize the xPU and Logic-PIM, we propose expert and attention co-processing. By exploiting proper processing units for MoE and attention layers, Duplex shows up to 2.67&times; higher throughput and consumes 42.0% less energy compared to GPU systems for LLM inference.</p>
         </div>
       </section>
 
       <footer>
-        <div class='index'><a href='202408-micro-duplex.html'>&lt; prev</a> | <a href='202411-hpca-anaheim.html'>next &gt;</a></div> 
+        <div class='index'>&lt; prev</a> | <a href='202411-micro-hof.html'>next &gt;</a></div> 
         <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
         <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
         <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
