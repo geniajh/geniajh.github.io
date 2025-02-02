@@ -322,8 +322,8 @@ footer {
     --teal: #64FFDA;
     --pink: #EC407A;
     --white: #000000;
-    --black: #eeeeee;
-    --dark-grey: #bbbbbb;
+    --black: #f3f3f3;
+    --dark-grey: #c0c0c0;
     --light-grey: #404040;
   }
 }
