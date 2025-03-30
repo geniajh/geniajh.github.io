@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Jung Ho Ahn - Post 2025/03/30</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NPDWL48G');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Metadata goes here -->
+    <meta charset='UTF-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../styles.css'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" media='(prefers-color-scheme: dark)' href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.css"/>
+    <link rel="stylesheet" media='(prefers-color-scheme: light)' href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPDWL48G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- Content goes here -->
+    <div class='header-container'>
+      <header>
+        <h1><a href='../'>Jung Ho Ahn</a></h1>
+        <p><time datetime='2025-03-30'>Mar 30th, 2025</p>
+      </header>
+    </div>
+
+    <nav>
+      <ul>
+        <li>2025/03/30</li>
+        <li><a href='202502-eurosys-pet.html'>2025/02/01</a></li>
+        <li><a href='202412-hall-of-fame.html'>2024/12/14</a></li>
+        <li><a href='202411-hpca-anaheim.html'>2024/11/04</a></li>
+        <li><a href='202411-micro-hof.html'>2024/11/01</a></li>
+        <li><a href='202408-micro-duplex.html'>2024/08/31</a></li>
+        <li>
+          <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
+          <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
+          <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
+          <a href='https://kr.linkedin.com/in/jung-ho-ahn-9876748' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png' class='linkedin'/></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class='blog-container'>
+      <section>
+        <h1>
+          Two papers accepted at <a href='https://www.asplos-conference.org/asplos2025/' target='_blank'><span class='asplos'>ASPLOS 2025</span></a>
+        </h1>
+      </section>
+
+      <section>
+        <div class='section-main'>
+          <p>Get ready for <span class='asplos'>ASPLOS</span> and <a href='https://2025.eurosys.org/' target='_blank'>EuroSys 2025</a>!
+          Our research group will be making a significant contribution this year, presenting a total of three papers at the collocated conferences in Rotterdam, the Netherlands. We&rsquo;re excited to share our work on &ldquo;Marionette&rdquo; and &ldquo;M5&rdquo; at ASPLOS 2025, and &ldquo;<a href='202502-eurosys-pet.html'>PET</a>&rdquo; at EuroSys 2025.</p>
+          <p>I&rsquo;m also looking forward to participating in <a href='https://cmu-caos.github.io/safeAI/' target='_blank'>SAFE-AI</a>, where I will be presenting my latest research on accelerating homomorphic encryption (HE). Furthermore, I&rsquo;m honored to be chairing <a href='https://www.asplos-conference.org/asplos2025/program/#i-d' target='_blank'>Session 1D: Homomorphic Encryption</a> at <span class='asplos'>ASPLOS</span> 2025.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>DRAM Row Coupling</h2>
+        <div class='section-main'>
+          <p>One of our key presentations at <span class='asplos'>ASPLOS</span> will be &ldquo;Marionette: A RowHammer Attack via Row Coupling&rdquo; (Session 4B), presented by the talented Seungmin Baek from our group. This paper uncovers a security vulnerability in certain DDR4 &times;4 DRAM chips. We&rsquo;ve discovered a &ldquo;row-coupling&rdquo; phenomenon, where hammering one row in a DRAM bank can unexpectedly flip bits in a different, paired row within the same bank &mdash; even if they aren't physically adjacent!</p>
+          <p>While we provided an initial glimpse of this behavior in our &ldquo;<a class='paper' href='https://doi.org/10.1109/ISCA59077.2024.00083'>DRAMScope</a>&rdquo; paper at <span class='isca'>ISCA</span> 2024, our &ldquo;Marionette&rdquo; paper offers an in-depth exploration of its implications for DRAM security, along with potential defense mechanisms. Importantly, we&lsquo;ve been working closely with the affected DRAM manufacturers on this issue, and our findings were under an embargo until today, <time datetime='2025-03-30'>March 30, 2025.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Marionette</h2>
+        <div class='section-main'>
+          <h3>Title</h3>
+          <p>Marionette: A RowHammer Attack via Row Coupling</p>
+
+          <h3>Authors</h3>
+          <p>Seungmin Baek, Minbok Wi, Seonyong Park, Hwayong Nam, Michael Jaemin Kim, Nam Sung Kim, and Jung Ho Ahn</p>
+
+          <h3>Abstract</h3>
+          <p>A body of recent work has revealed that two different rows in a DRAM bank, from the perspective of a processor-memory interface, are connected to the same wordline but two separate row buffers (bitline sense amplifiers) in certain DRAM chips. Such a pair of rows is referred to as a &ldquo;coupled-row pair.&rdquo; Coupled-row pairs pose a substantial security threat as RowHammer bitflips can be caused not only by the conventional, adjacent aggressor rows but also by their coupled rows that are distant in physical address.</p>
+          <p>We investigate the impact of a coupled row on both FPGA-based infrastructure and server systems. In RowHammer attacks, coupled rows have hammering strength nearly identical to aggressor rows, with these attacks invisible to conventional, processor-side mitigation solutions. By exploiting these observations, we present Marionette, a new type of RowHammer attack that exploits coupled rows to extend the existing RowHammer attack surface.</p>
+          <p>First, coupled rows enable an attacker to evade two types of existing software-based RowHammer defenses: tracking- and isolation-based defenses. We induce RowHammer bitflips successfully against tracking-based RowHammer defenses by silently hammering coupled rows. We also identify the feasibility of RowHammer bitflips in an isolation-based inter-VM RowHammer defense by breaking DRAM-subarray-level isolation. Second, we successfully conduct an existing RowHammer exploit in a server under the tracking-based RowHammer defense. In a native server system, Marionette enhances the success rate of the RowHammer exploit by up to 1.66&times;. Lastly, we explore lightweight mitigation schemes for Marionette by exposing the coupled-row relationship to systems.</p>
+        </div>
+      </section>
+
+      <footer>
+        <div class='index'><a href='202502-eurosys-pet.html'>&lt; prev</a> | next &gt;</div> 
+        <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
+        <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
+        <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
+        <a href='https://kr.linkedin.com/in/jung-ho-ahn-9876748' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png' class='linkedin'/></a>
+        <div class='copyright'>&copy; Jung Ho Ahn</div>
+      </footer>
+
+    </div>
+  </body>
+</html>
+
+
+
