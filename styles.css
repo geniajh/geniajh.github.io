@@ -46,7 +46,9 @@ body {
   color: var(--dark-grey);
   background-color: var(--white);
   font-size: 17px;
-  font-family: 'Times', 'Times New Roman', serif;
+  font-family: 'Source Sans 3', 'Noto Sans KR', 'Times', 'Times New Roman', sans-serif;
+  font-style: normal;
+  font-weight: 400;
   line-height: 1.26em;
   hyphens: auto;
 }
@@ -81,6 +83,7 @@ header {
 
 h1 {
   font-size: 1.8em;
+  font-weight: 700;
   padding: 2px 2px 7px 2px;  /* Top  Right  Bottom  Left */
   /* margin: 5px 0px 5px 0px; */
 }
@@ -137,12 +140,14 @@ section > h1 {
   width: 100%;
   padding: 4px 0px 8px 2px;  /* Top  Right  Bottom  Left */
   font-size: 1.33em;
+  font-weight: 700;
 }
 
 section > h2 {
   width: var(--h2-width);
   padding: 4px 0px 2px 2px;  /* Top  Right  Bottom  Left */
   font-size: 1.3em;
+  font-weight: 600;
 }
 
 .blog-container > section > .section-main,
@@ -195,7 +200,7 @@ span.student-name {
 h3 {
   padding: 2px 0px 4px 10px;  /* Top  Right  Bottom  Left */
   font-size: 1.1em;
-  // font-weight: normal;
+  font-weight: 600;
 }
 
 a {
