@@ -49,7 +49,7 @@ body {
   font-family: 'Source Sans 3', 'Noto Sans KR', 'Times', 'Times New Roman', sans-serif;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.26em;
+  line-height: 1.4em;
   hyphens: auto;
 }
 
@@ -167,7 +167,7 @@ section > .section-main {
 }
 
 section > .section-main > p {
-  padding: 0px 0px 0px 0.5rem;
+  padding: 0px 0px 2px 0.5rem;
 }
 
 section > .section-main > ul {
@@ -266,6 +266,14 @@ li {
 
 .sc {
   color: var(--pink);
+}
+
+.conv {
+  color: var(--blue);
+}
+
+.dconv {
+  color: var(--yellow);
 }
 
 a > .dblp {
