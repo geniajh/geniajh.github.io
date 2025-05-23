@@ -276,6 +276,10 @@ li {
   color: var(--yellow);
 }
 
+.samsung {
+  color: var(--blue);
+}
+
 a > .dblp {
   height: 20px;
   padding: 0px 3px 0px 0px;
