@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>Jung Ho Ahn - Post 2024/11/01</title>
+    <title>Jung Ho Ahn - Post 2025/07/10</title>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -35,20 +35,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='header-container'>
       <header>
         <h1><a href='../'>Jung Ho Ahn</a></h1>
-        <p><time datetime='2024-11-01'>Nov 1st, 2024</p>
+        <p><time datetime='2025-07-10'>July 10th, 2025</p>
       </header>
     </div>
 
     <nav>
       <ul>
-        <li><a href='202507-cal-prac.html'>2025/07/10</a></li>
+        <li>2025/07/10</li>
         <li><a href='202505-cal-cosmos.html'>2025/05/23</a></li>
         <li><a href='202504-fantastic-four.html'>2025/04/05</a></li>
         <li><a href='202503-asplos-marionette.html'>2025/03/30</a></li>
         <li><a href='202502-eurosys-pet.html'>2025/02/01</a></li>
         <li><a href='202412-hall-of-fame.html'>2024/12/14</a></li>
         <li><a href='202411-hpca-anaheim.html'>2024/11/04</a></li>
-        <li>2024/11/01</li>
+        <li><a href='202411-micro-hof.html'>2024/11/01</a></li>
         <li><a href='202408-micro-duplex.html'>2024/08/31</a></li>
         <li><a href='201904-convergence.html'>2019/04/01</a></li>
         <li>
@@ -63,25 +63,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='blog-container'>
       <section>
         <h1>
-          Inducted into the <a href='https://www.sigmicro.org/awards/microhof.php' target='_blank'>ACM SIGMICRO <span class='micro'>MICRO</span> Hall of Fame</a>
+          One paper accepted at <a href='https://www.computer.org/csdl/journal/ca' target='_blank'>IEEE Computer Architecture Letters</a>
         </h1>
       </section>
 
       <section>
         <div class='section-main'>
-          <p>I have been inducted into the ACM SIGMICRO MICRO Hall of Fame. It has been a while since I published <a class='paper' href='https://dl.acm.org/doi/10.1145/1669112.1669172?cid=81100339570'>my first MICRO paper in 2009</a>. As usual, all the credits must be awarded to my brilliant colleagues!</p>
-        </div>
+          <p>Ever wondered about the real-world performance cost of defending against RowHammer in modern DDR5 DRAM?</p>
+
+          <p><a href='https://stefan.t8k2.com/rh/PRAC/index.html' target='_blank'>Per-Row Activation Counting (PRAC)</a> is the industry's latest built-in defense.
+          While recent conferences like <span class='hpca'>HPCA</span> 2025, <span class='isca'>ISCA</span> 2025, and <a href='https://dramsec.ethz.ch/' target='_blank'>the DRAMSec 2025 workshop</a> have been buzzing with simulation-based studies on PRAC's overhead, a critical question has remained unanswered: <em>How does it perform on actual hardware?</em></p>
+
+          <p>Our latest paper in  <a href='https://www.computer.org/csdl/journal/ca' target='_blank'>IEEE Computer Architecture Letters</a>, &ldquo;<a class='paper' href='https://www.arxiv.org/abs/2507.05556'>Per-Row Activation Counting on Real Hardware: Demystifying Performance Overheads</a>,&rdquo; tackles this question head-on.
+          By manipulating DRAM timing parameters on a real system, we made a key discovery that the average performance overhead of PRAC is a modest 1.06% on <a href='https://www.spec.org/cpu2017/' target='_blank'>SPEC CPU 2017</a> (rate).</p>
+
+          <p>However, the story doesn't end there.
+          We found this overhead is highly sensitive to workload characteristics, particularly DRAM access frequency and row-buffer conflict rates.
+          This highlights the crucial role that memory controller page policies play in the ultimate performance impact of this new security feature.</p>
+
+          <p>We believe this is the first study to ground the PRAC performance discussion in real-world measurement.
+          Check out our paper to learn more!</p>
+       </div>
       </section>
 
       <section>
-        <h2>My <span class='micro'>MICRO</span> co-authors (as of 2024)</h2>
+        <h2>PRAC</h2>
         <div class='section-main'>
-          <p><a href='../index.html#bhkim'>Byeongho Kim</a> (&times;2), Chihun Song, Dean Tullsen, <a href='../index.html#ejlee'>Eojin Lee</a> (&times;3), Gina Sohn, Gwangho Lee, Hadi Asghari Moghaddam, Houxiang Ji, Hwayong Nam, Ipoom Jeong, Jae W. Lee, <a href='../index.html#jhpark'>Jaehyun Park</a> (&times;2), <a href='../index.html#jwchoi'>Jaewan Choi</a>, Jaeyoung Choi, Jay Brockman, Jiaqi Lou, Jinghan Huang, John Kim, Jongmin Kim (&times;2), Juhwan Cho, Kwanhee Kyung, Kyomin Sohn, Michael Jaemin Kim, Minbok Wi, Minsoo Rhu (&times;2), Nam Sung Kim (&times;3), Norm Jouppi, Reese Kuper, Ren Wang, Richard D. Strong, Sangpyo Kim, Seoyoung Ko, Sheng Li, Siddharth Agarwal, <a href='../index.html#shlee'>Sukhan Lee</a>, Sungmin Yun (&times;2), <a href='https://taejunham.github.io/' target='_blank'>Tae Jun Ham</a>, Tianyin Xu, Woosuk Kwon, Yan Sun, Yeonhong Park, Yifan Yuan, <a href='../index.html#yhson'>Young Hoon Son</a>, and Zeduo Yu</p>
+          <h3>Title</h3>
+          <p>Per-Row Activation Counting on Real Hardware: Demystifying Performance Overheads</p>
+
+          <h3>Authors</h3>
+          <p>Jumin Kim, Seungmin Baek, Minbok Wi, Hwayong Nam, Michael Jaemin Kim, <a href='../index.html#shlee'>Sukhan Lee</a>, <span class='samsung'>Kyomin Sohn</span>, Jung Ho Ahn</p>
+
+          <h3>Abstract</h3>
+          <p>Per-Row Activation Counting (PRAC), a DRAM read disturbance mitigation method, modifies key DRAM timing parameters, reportedly causing significant performance overheads in simulator-based studies. However, given known discrepancies between simulators and real hardware, real-machine experiments are vital for accurate PRAC performance estimation. We present the first real-machine performance analysis of PRAC. After verifying timing modifications on the latest CPUs using microbenchmarks, our analysis shows that PRAC's average and maximum overheads are just 1.06% and 3.28% for the SPEC CPU2017 workloads&mdash;up to 9.15&times; lower than simulator-based reports. Further, we show that the close page policy minimizes this overhead by effectively hiding the elongated DRAM row precharge operations due to PRAC from the critical path.</p>
         </div>
       </section>
 
       <footer>
-        <div class='index'><a href='202408-micro-duplex.html'>&lt; prev</a> | <a href='202411-hpca-anaheim.html'>next &gt;</a></div> 
+        <div class='index'><a href='202505-cal-cosmos.html'>&lt; prev</a> | next &gt;</div> 
         <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
         <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
         <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
@@ -92,5 +112,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </body>
 </html>
+
 
 
