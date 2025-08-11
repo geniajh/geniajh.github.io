@@ -35,14 +35,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='header-container'>
       <header>
         <h1><a href='../'>Jung Ho Ahn</a></h1>
-        <p><time datetime='2025-07-10'>July 10th, 2025</p>
+        <p><time datetime='2025-08-11'>August 11th, 2025</p>
       </header>
     </div>
 
     <nav>
       <ul>
-        <li><a href='202508-cal-ssd.html'>2025/08/11</a></li>
-        <li>2025/07/10</li>
+        <li>2025/08/11</li>
+        <li><a href='202507-cal-prac.html'>2025/07/10</a></li>
         <li><a href='202505-cal-cosmos.html'>2025/05/23</a></li>
         <li><a href='202504-fantastic-four.html'>2025/04/05</a></li>
         <li><a href='202503-asplos-marionette.html'>2025/03/30</a></li>
@@ -63,45 +63,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='blog-container'>
       <section>
         <h1>
-          One paper accepted at <a href='https://www.computer.org/csdl/journal/ca' target='_blank'>IEEE Computer Architecture Letters</a>
+          Another paper accepted at <a href='https://www.computer.org/csdl/journal/ca' target='_blank'>IEEE Computer Architecture Letters</a>
         </h1>
       </section>
 
       <section>
         <div class='section-main'>
-          <p>Ever wondered about the real-world performance cost of defending against RowHammer in modern DDR5 DRAM?</p>
+          <p>Offloading less-used experts from <a href='202408-micro-duplex.html'>Mixture-of-Experts (MoE) LLMs</a> to SSDs is an attractive strategy for running large models on memory-constrained devices. However, our research highlights a critical consideration: <em>energy efficiency</em>.</p>
 
-          <p><a href='https://stefan.t8k2.com/rh/PRAC/index.html' target='_blank'>Per-Row Activation Counting (PRAC)</a> is the industry's latest built-in defense.
-          While recent conferences like <span class='hpca'>HPCA</span> 2025, <span class='isca'>ISCA</span> 2025, and <a href='https://dramsec.ethz.ch/' target='_blank'>the DRAMSec 2025 workshop</a> have been buzzing with simulation-based studies on PRAC's overhead, a critical question has remained unanswered: <em>How does it perform on actual hardware?</em></p>
+          <p>We found that the energy required to fetch expert weights from an SSD can become a significant bottleneck, potentially dominating the total power consumption during inference.
+          <a class='paper' href='https://ieeexplore.ieee.org/abstract/document/11095626'>Our paper</a> quantifies this energy trade-off and concludes that SSD offloading is most beneficial under specific scenarios:</p>
 
-          <p>Our latest paper in  <a href='https://www.computer.org/csdl/journal/ca' target='_blank'>IEEE Computer Architecture Letters</a>, &ldquo;<a class='paper' href='https://www.arxiv.org/abs/2507.05556'>Per-Row Activation Counting on Real Hardware: Demystifying Performance Overheads</a>,&rdquo; tackles this question head-on.
-          By manipulating DRAM timing parameters on a real system, we made a key discovery that the average performance overhead of PRAC is a modest 1.06% on <a href='https://www.spec.org/cpu2017/' target='_blank'>SPEC CPU 2017</a> (rate).</p>
+          <ul>
+            <li>Systems with low batch sizes, such as those found on mobile or edge devices.</li>
+            <li>If future SSDs achieve a >10&times; improvement in energy efficiency (reaching &sim;10 pJ/bit).</li>
+          </ul>
 
-          <p>However, the story doesn't end there.
-          We found this overhead is highly sensitive to workload characteristics, particularly DRAM access frequency and row-buffer conflict rates.
-          This highlights the crucial role that memory controller page policies play in the ultimate performance impact of this new security feature.</p>
-
-          <p>We believe this is the first study to ground the PRAC performance discussion in real-world measurement.
-          Check out our paper to learn more!</p>
+          <p>Furthermore, emerging techniques like <a href='https://research.google/blog/looking-back-at-speculative-decoding/'>speculative decoding</a> can increase the &lsquo;effective&rsquo; batch size even on edge devices, further challenging the viability of this offloading approach. Our work emphasizes that the role of storage hardware in MoE systems must be evaluated prudently.</p>
        </div>
       </section>
 
       <section>
-        <h2>PRAC</h2>
+        <h2>Implications of SSD offloading for LLM MoE on energy efficiency</h2>
         <div class='section-main'>
           <h3>Title</h3>
-          <p>Per-Row Activation Counting on Real Hardware: Demystifying Performance Overheads</p>
+          <p><a class='paper' href='https://ieeexplore.ieee.org/abstract/document/11095626'>SSD Offloading for LLM Mixture-of-Experts Weights Considered Harmful in Energy Efficiency</a></p>
 
           <h3>Authors</h3>
-          <p>Jumin Kim, Seungmin Baek, Minbok Wi, Hwayong Nam, Michael Jaemin Kim, <a href='../index.html#shlee'>Sukhan Lee</a>, <span class='samsung'>Kyomin Sohn</span>, Jung Ho Ahn</p>
+          <p>Kwanhee Kyung, Sungmin Yun, Jung Ho Ahn</p>
 
           <h3>Abstract</h3>
-          <p>Per-Row Activation Counting (PRAC), a DRAM read disturbance mitigation method, modifies key DRAM timing parameters, reportedly causing significant performance overheads in simulator-based studies. However, given known discrepancies between simulators and real hardware, real-machine experiments are vital for accurate PRAC performance estimation. We present the first real-machine performance analysis of PRAC. After verifying timing modifications on the latest CPUs using microbenchmarks, our analysis shows that PRAC's average and maximum overheads are just 1.06% and 3.28% for the SPEC CPU2017 workloads&mdash;up to 9.15&times; lower than simulator-based reports. Further, we show that the close page policy minimizes this overhead by effectively hiding the elongated DRAM row precharge operations due to PRAC from the critical path.</p>
+          <p>Large Language Models (LLMs) applying Mixture-of-Experts (MoE) scale to trillions of parameters but require vast memory, motivating a line of research to offload expert weights from fast-but-small DRAM (HBM) to denser Flash SSDs. While SSDs provide cost-effective capacity, their read energy per bit is substantially higher than that of DRAM. This paper quantitatively analyzes the energy implications of offloading MoE expert weights to SSDs during the critical decode stage of LLM inference. Our analysis, comparing SSD, CPU memory (DDR), and HBM storage scenarios for models like DeepSeek-R1, reveals that offloading MoE weights to current SSDs drastically increases per-token-generation energy consumption (e.g., by up to &sim;12&times; compared to the HBM baseline), dominating the total inference energy budget. Although techniques like prefetching effectively hide access latency, they cannot mitigate this fundamental energy penalty. We further explore future technological scaling, finding that the inherent sparsity of MoE models could potentially make SSDs energy-viable if Flash read energy improves significantly, roughly by an order of magnitude.</p>
         </div>
       </section>
 
       <footer>
-        <div class='index'><a href='202505-cal-cosmos.html'>&lt; prev</a> | <a href='202508-cal-ssd.html'>next &gt;</a></div> 
+        <div class='index'><a href='202507-cal-prac.html'>&lt; prev</a> | next &gt;</div> 
         <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
         <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
         <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
