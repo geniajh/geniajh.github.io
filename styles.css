@@ -198,6 +198,11 @@ span.student-name {
   width: 155px;
 }
 
+span.schedule-date {
+  display: inline-block;
+  width: 100px;
+}
+
 h3 {
   padding: 2px 0px 4px 10px;  /* Top  Right  Bottom  Left */
   font-size: 1.1em;
@@ -267,6 +272,10 @@ li {
 
 .sc {
   color: var(--pink);
+}
+
+.ai {
+  color: var(--blue);
 }
 
 .conv {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>Jung Ho Ahn - Post 2025/05/23</title>
+    <title>Jung Ho Ahn - Post 2025/08/20</title>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -35,22 +35,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='header-container'>
       <header>
         <h1><a href='../'>Jung Ho Ahn</a></h1>
-        <p><time datetime='2025-05-23'>May 23th, 2025</p>
+        <p><time datetime='2025-08-20'>Aug 20th, 2025</p>
       </header>
     </div>
 
     <nav>
       <ul>
-        <li><a href='202508-asplos-cheddar.html'>2025/08/20</a></li>
+        <li><a href='202509-ai-class.html'>2025/09/01</a></li>
+        <li>2025/08/20</li>
         <li><a href='202508-google-scholar.html'>2025/08/17</a></li>
         <li><a href='202508-cal-ssd.html'>2025/08/11</a></li>
         <li><a href='202507-cal-prac.html'>2025/07/10</a></li>
-        <li>2025/05/23</li>
+        <li><a href='202505-cal-cosmos.html'>2025/05/23</a></li>
         <li><a href='202504-fantastic-four.html'>2025/04/05</a></li>
         <li><a href='202503-asplos-marionette.html'>2025/03/30</a></li>
         <li><a href='202502-eurosys-pet.html'>2025/02/01</a></li>
         <li><a href='202412-hall-of-fame.html'>2024/12/14</a></li>
-        <li><a href='202411-hpca-anaheim.html'>2024/11/04</a></li>
         <li>
           <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
           <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
@@ -63,35 +63,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='blog-container'>
       <section>
         <h1>
-          One paper accepted at <a href='https://www.computer.org/csdl/journal/ca' target='_blank'>IEEE Computer Architecture Letters</a>
+          Our Cheddar paper was accepted at <a href='https://www.asplos-conference.org/asplos2026/' target='_blank'><span class='asplos'>ASPLOS 2026</span></a>!
         </h1>
       </section>
 
       <section>
         <div class='section-main'>
-          <p>We have another paper accepted at IEEE Computer Architecture Letters (#19 @ IEEE CAL).
-          This is the second collaborative effort with the CXL team at <a href='https://www.samsung.com/sec/' target='_blank'><span class='samsung'>Samsung Electronics</span></a>.
-          This time, we focus on accelerating RAG (retrieval-augmented generation) with the near-data processing (NDP, <span class='samsung'>Samsung</span> calls it <a href='https://semiconductor.samsung.com/news-events/tech-blog/samsung-electronics-semiconductor-unveils-cutting-edge-memory-technology-to-accelerate-next-generation-ai/' target='_blank'>Processing-Near Memory</a>) of <a href='https://semiconductor.samsung.com/news-events/news/samsung-develops-industrys-first-cxl-dram-supporting-cxl-2-0/' target='_blank'>CXL-DRAM</a> devices.
-          Compared to the previous solutions, we minimize the amount of data transfers between a host and CXL devices by exploiting the combination of general-purpose cores and domain-specific processing units. Our paper can be found at the following <a href='https://arxiv.org/abs/2505.16096'>arXiv page</a> and the <a href='https://doi.org/10.1109/LCA.2025.3570235'>DOI link</a>.</p>
+          <p>This work is about accelerating the popular fully <a href='https://homomorphicencryption.org/' target='_blank'>homomorphic encryption</a> (FHE) scheme, CKKS, using the latest GPUs.
+          As we state in the paper, &ldquo;Cheddar is simply fast,&rdquo; delivering performance improvements of 2.18&ndash;4.45&times; for representative FHE workloads compared to state-of-the-art GPU implementations.</p>
+          
+          <p>The key contributions of the paper are:</p>
+          <ul>
+            <li>The 25-30 prime system, a 32-bit residue-number-system design with an inverted-terminal data layout, enabling systematic and efficient FHE execution on GPUs.</li>
+            <li>Highly optimized 32-bit GPU kernels using signed Montgomery reduction and architecture-aware optimizations to enhance computational efficiency and memory usage in core FHE operations.</li>
+            <li>Extensive kernel fusion, reordering and splitting operational sequences to mitigate memory bandwidth bottleneck.</li>
+            <li>Reducing encrypted ResNet-20 inference latency to 0.72 seconds on a single RTX 5090 GPU.</li>
+          </ul>
+
+          <p>Cheddar will be open-sourced at the start of the conference.
+          We'd like to acknowledge the exceptional contributions of our co-first authors, Wonseok Choi and Jongmin Kim.
+          (Notably, Jongmin's impressive track record includes co-first authorship on papers for <span class='asplos'>ASPLOS</span>, <span class='hpca'>HPCA</span>, <span class='isca'>ISCA</span>, and <span class='micro'>MICRO</span>.)
+          Stay tuned for more updates!
         </div>
       </section>
 
       <section>
-        <h2>Cosmos</h2>
+        <h2><a href='https://arxiv.org/abs/2407.13055' target='_blank'>Cheddar</a></h2>
         <div class='section-main'>
           <h3>Title</h3>
-          <p>Cosmos: A CXL-Based Full In-Memory System for Approximate Nearest Neighbor Search</p>
+          <p>Cheddar: A Swift Fully Homomorphic Encryption Library Designed for GPU Architectures</p>
 
           <h3>Authors</h3>
-          <p>Seoyoung Ko, Hyunjeong Shim, Wanju Doh, Sungmin Yun, Jinin So, <a href='../index.html#yskwon'>Yongsuk Kwon</a>, Sang-Soo Park, Si-Dong Roh, Minyong Yoon, Taeksang Song, Jung Ho Ahn</p>
+          <p>Wonseok Choi, Jongmin Kim, and Jung Ho Ahn</p>
 
           <h3>Abstract</h3>
-          <p>Retrieval-Augmented Generation (RAG) is crucial for improving the quality of large language models by injecting proper contexts extracted from external sources. RAG requires high-throughput, low-latency Approximate Nearest Neighbor Search (ANNS) over billion-scale vector databases. Conventional DRAM/SSD solutions face capacity/latency limits, whereas specialized hardware or RDMA clusters lack flexibility or incur network overhead. We present Cosmos, integrating general-purpose cores within CXL memory devices for full ANNS offload and introducing rank-level parallel distance computation to maximize memory bandwidth. We also propose an adjacency-aware data placement that balances search loads across CXL devices based on inter-cluster proximity. Evaluations on SIFT1B and DEEP1B traces show that Cosmos achieves up to 6.72&times; higher throughput than the baseline CXL system and 2.35&times; over a state-of-the-art CXL-based solution, demonstrating scalability for RAG pipelines.</p>
+          <p>Fully homomorphic encryption (FHE) frees cloud computing from privacy concerns by enabling secure computation on encrypted data.
+          However, its substantial computational and memory overhead results in significantly slower performance compared to unencrypted processing. 
+          To mitigate this overhead, we present Cheddar, a high-performance FHE library for GPUs, achieving substantial speedups over previous GPU implementations. 
+          We systematically enable 32-bit FHE execution, leveraging the 32-bit integer datapath within GPUs. 
+          We optimize GPU kernels using efficient low-level primitives and algorithms tailored to specific GPU architectures. 
+          Further, we alleviate the memory bandwidth burden by adjusting common FHE operational sequences and extensively applying kernel fusion. 
+          Cheddar delivers performance improvements of 2.18&ndash;4.45&times; for representative FHE workloads compared to state-of-the-art GPU implementations.</p>
         </div>
       </section>
 
       <footer>
-        <div class='index'><a href='202504-fantastic-four.html'>&lt; prev</a> | <a href='202507-cal-prac.html'>next &gt;</a></div> 
+        <div class='index'><a href='202508-google-scholar.html'>&lt; prev</a> | <a href='202509-ai-class.html'>next &gt;</a></div> 
         <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
         <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
         <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
