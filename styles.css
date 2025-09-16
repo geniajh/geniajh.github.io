@@ -203,6 +203,12 @@ span.schedule-date {
   width: 100px;
 }
 
+span.li-header {
+  color: var(--black);
+  font-weight: bold;
+}
+
+
 h3 {
   padding: 2px 0px 4px 10px;  /* Top  Right  Bottom  Left */
   font-size: 1.1em;
@@ -290,6 +296,14 @@ li {
   color: var(--blue);
 }
 
+.intern {
+  color: var(--yellow);
+}
+
+.interview {
+  color: var(--red);
+}
+
 a > .dblp {
   height: 20px;
   padding: 0px 3px 0px 0px;
@@ -365,6 +379,9 @@ footer {
 @media only screen and (max-width: calc(700px)) {
   .header-container {
     justify-content: start;
+  }
+  .last-update {
+    display: none;
   }
   header {
     width: 100%;
