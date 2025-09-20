@@ -260,15 +260,15 @@ li {
   padding: 0px 1px 0px 1px;
 }
 
-.isca {
+.isca, .gscst {
   color: var(--yellow);
 }
 
-.hpca {
+.hpca, .snu {
   color: var(--blue);
 }
 
-.micro {
+.micro, .stanford {
   color: var(--red);
 }
 
