@@ -203,12 +203,6 @@ span.schedule-date {
   width: 100px;
 }
 
-span.li-header {
-  color: var(--black);
-  font-weight: bold;
-}
-
-
 h3 {
   padding: 2px 0px 4px 10px;  /* Top  Right  Bottom  Left */
   font-size: 1.1em;
@@ -251,6 +245,25 @@ ol {
 
 li {
   /* margin-bottom: 2px; */
+}
+
+.section-main > dl > dt {
+  float: left;
+  clear: left;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.section-main > dl > dt:after {
+  margin-left: 1px;
+  content: ": ";
+  font-weight: normal;
+  margin-right: 5px;
+}
+
+.section-main > dl > dd {
+  margin-left: 10px;
+  padding: 0px 0px 3px 0px;
 }
 
 .new {
