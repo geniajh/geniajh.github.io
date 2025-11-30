@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='ko'>
   <head>
-    <title>Jung Ho Ahn - Post 2025/11/14</title>
+    <title>Jung Ho Ahn - Post 2025/11/30</title>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -35,14 +35,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='header-container'>
       <header>
         <h1><a href='../'>Jung Ho Ahn</a></h1>
-        <p><time datetime='2025-11-14'>Nov 14th, 2025</p>
+        <p><time datetime='2025-11-30'>Nov 30th, 2025</p>
       </header>
     </div>
 
     <nav>
       <ul>
-        <li><a href='202511-hpca-ive.html'>2025/11/30</a></li>
-        <li>2025/11/14</li>
+        <li>2025/11/30</li>
+        <li><a href='202511-snp-rowhammer.html'>2025/11/14</a></li>
         <li><a href='202509-prospective-students.html'>2025/09/16</a></li>
         <li><a href='202509-ai-class.html'>2025/09/01</a></li>
         <li><a href='202508-asplos-cheddar.html'>2025/08/20</a></li>
@@ -63,48 +63,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='blog-container'>
       <section>
         <h1>
-          An SoK paper accepted at IEEE S&P 2026
+          An <span class='ive'>IVE</span> paper accepted at <span class='hpca'>HPCA</span> 2026 (along with three more papers)
         </h1>
       </section>
 
       <section>
         <div class='section-main'>
-          <p>The first systematization of knowledge (SoK) paper from our group will be published at <a href='https://sp2026.ieee-security.org/' target='_blank'>IEEE S&P 2026</a> (47th IEEE Symposium on Security and Privacy)!</p>
+          <p>Excited to announce that our paper, <span class='ive'>IVE</span>, has been accepted at <a href='https://conf.researchr.org/home/hpca-2026' target='_blank'><span class='hpca'>HPCA</span> 2026</a>!</p>
 
-          <p>In the paper, we tried to categorize a good volume of architectural defenses against <span class='rh'>RowHammer</span> attacks through the lens of streaming algorithms.
-          As we wrote in the paper, the domain-level connection between streaming algorithms and <span class='rh'>RowHammer</span> defense was previously identified in <a class='paper' href='https://www.microarch.org/micro53/papers/738300a001.pdf'>the Graphene paper</a>, which I contributed as a co-author.
-          We extended this understanding, mapping the majority of the existing <span class='rh'>RowHammer</span> protection to the relevant algorithms.</p>
+          <p>Understanding and optimizing emerging applications is a recurring theme in <a href='https://scale.snu.ac.kr' target='_blank'>my research group</a>.
+          Recently, we dove into single-server, <a href='https://homomorphicencryption.org/' target='_blank'>Homomorphic Encryption</a> (HE)-based Private Information Retrieval (PIR) to find its &ldquo;killer application.&rdquo;
+          While my tech-savvy students quickly grasped complex schemes like <a class='paper' href='https://eprint.iacr.org/2025/1142' target='_blank'>OnionPIR</a>, the math was initially arcane to me.
+          This led to fierce internal discussions where I played the &ldquo;devil&apos;s advocate&rdquo;&mdash;a process that ultimately strengthened our work.</p>
 
-          <p>The paper consists of the following three primary contributions:</p>
+          <p>We identified that while batching requests is essential to amortize the cost of database scans in PIR, current CPUs and GPUs struggle to unleash the full potential of this approach due to compute and memory bottlenecks.</p>
+
+          <p>To address this, we propose <span class='ive'>IVE</span> (an accelerator for batched P<span class='ive'>I</span>R leveraging <span class='ive'>V</span>ersatile processing <span class='ive'>E</span>lements).
+          IVE features:</p>
+
           <ol>
-            <li>We first categorized the architectural <span class='rh'>RowHammer</span> solutions into three types; tracker-based, tracker-less, and cooperative.</li>
-            <li>We offered guides in choosing the most suitable algorithm for given circumstances.</li>
-            <li>We provided case studies of several prior <span class='rh'>RowHammer</span> defenses and their corresponding algorithms, revealing previously unrecognized connections.</li>
+            <li>A large on-chip scratchpad with a scheduling algorithm for maximal data reuse.</li>
+            <li>An area-efficient, versatile functional unit called sysNTTU.</li>
+            <li>A heterogeneous memory system architecture.</li>
           </ol>
 
-          <p>I am really proud of my former student, Dr. <a href='../index.html#mjkim'>Michael Jaemin Kim</a> at <a href='https://www.meta.com/' target='_blank'>Meta</a>, for his heroic efforts to turn my pure wish into his thesis chapter, and then into an IEEE S&P paper, which showcases his dedication over several years in the research around <span class='rh'>RowHammer</span> mitigation solutions.
-          Kudos to Michael and my coauthors: Seungmin Baek, Jumin Kim, Hwayong Nam, and Nam Sung Kim!</p>
+          <p>Our paper will be available soon. I look forward to seeing many of you in <a href='https://iccsydney.com.au/' target='_blank'>Sydney</a> next February!</p>
         </div>
       </section>
 
        <section>
-        <h2><a class='paper' href='https://arxiv.org/abs/2511.06192'><span class='rh'>RowHammer</span> SoK</a></h2>
+        <h2><a class='paper'><span class='ive'>IVE</span> for PIR</a></h2>
         <div class='section-main'>
           <h3>Title</h3>
-          <p>SoK: Systematizing a Decade of Architectural <span class='rh'>RowHammer</span> Defenses Through the Lens of Streaming Algorithms</p>
+          <p><span class='ive'>IVE</span>: An Accelerator for Single-Server Private Information Retrieval Using Versatile Processing Elements</p>
 
           <h3>Authors</h3>
-          <p><a href='../index.html#mjkim'>Michael Jaemin Kim</a>, Seungmin Baek, Jumin Kim, Hwayong Nam, Nam Sung Kim, and Jung Ho Ahn</p>
+          <p><a href='../index.html#spkim'>Sangpyo Kim</a>, Hyesung Ji, Jongmin Kim, Wonseok Choi, Jaiyoung Park, and Jung Ho Ahn</p>
      
           <h3>Abstract</h3>
-          <p>A decade after its academic introduction, <span class='rh'>RowHammer</span> (RH) remains a moving target that continues to challenge both the industry and academia. With its potential to serve as a critical attack vector, the ever-decreasing RH threshold now threatens DRAM process technology scaling, with a superlinearly increasing cost of RH protection solutions. Due to their generality and relatively lower performance costs, architectural RH solutions are the first line of defense against RH. However, the field is fragmented with varying views of the problem, terminologies, and even threat models.
-          In this paper, we systematize architectural RH defenses from the last decade through the lens of streaming algorithms. We provide a taxonomy that encompasses 48 different works. We map multiple architectural RH defenses to the classical streaming algorithms, which extends to multiple proposals that did not identify this link. We also provide two practitioner guides. The first guide analyzes which algorithm best fits a given RH<sub>TH</sub>, location, process technology, storage type, and mitigative action. The second guide encourages future research to consult existing algorithms when architecting RH defenses. We illustrate this by demonstrating how Reservoir-Sampling can improve related RH defenses, and also introduce StickySampling that can provide mathematical security that related studies do not guarantee.</p>
+          <p>Private information retrieval (PIR) is an essential cryptographic protocol for privacy-preserving applications, enabling a client to retrieve a record from a server&apos;s database without revealing which record was requested.
+          Single-server PIR based on homomorphic encryption has particularly gained immense attention for its ease of deployment and reduced trust assumptions.
+          However, single-server PIR remains impractical due to its high computational and memory bandwidth demands.
+          Specifically, reading the entirety of large databases from storage, such as SSDs, severely limits its performance.
+          To address this, we propose <span class='ive'>IVE</span>, an accelerator for single-server PIR with a systematic extension that enables practical retrieval from large databases using DRAM.
+          Recent advances in DRAM capacity allow PIR for large databases to be served entirely from DRAM, removing its dependence on storage bandwidth.
+          Although the memory bandwidth bottleneck still remains, multi-client batching effectively amortizes database access costs across concurrent requests to improve throughput. 
+          However, client-specific data remains a bottleneck, whose bandwidth requirements ultimately limits performance.
+          <span class='ive'>IVE</span> overcomes this by employing a large on-chip scratchpad with an operation scheduling algorithm that maximizes data reuse, further boosting throughput.
+          Additionally, we introduce sysNTTU, a versatile functional unit that enhances area efficiency without sacrificing performance.
+          We also propose a heterogeneous memory system architecture, which enables a linear scaling of database sizes without a throughput degradation.
+          Consequently, <span class='ive'>IVE</span> achieves up to 1,275&times; higher throughput compared to prior PIR hardware solutions.</p>
         </div>
       </section>
 
 
       <footer>
-        <div class='index'><a href='202509-prospective-students.html'>&lt; prev</a> | <a href='202511-hpca-ive.html'>next &gt;</a></div> 
+        <div class='index'><a href='202511-snp-rowhammer.html'>&lt; prev</a> | next &gt;</div> 
         <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
         <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
         <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
