@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='ko'>
   <head>
-    <title>Jung Ho Ahn - Post 2025/11/14</title>
+    <title>Jung Ho Ahn - Post 2025/12/02</title>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -35,15 +35,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='header-container'>
       <header>
         <h1><a href='../'>Jung Ho Ahn</a></h1>
-        <p><time datetime='2025-11-14'>Nov 14th, 2025</p>
+        <p><time datetime='2025-12-02'>Dec 2nd, 2025</p>
       </header>
     </div>
 
     <nav>
       <ul>
-        <li><a href='202512-hpca-rome.html'>2025/12/02</a></li>
+        <li>2025/12/02</li>
         <li><a href='202511-hpca-ive.html'>2025/11/30</a></li>
-        <li>2025/11/14</li>
+        <li><a href='202511-snp-rowhammer.html'>2025/11/14</a></li>
         <li><a href='202509-prospective-students.html'>2025/09/16</a></li>
         <li><a href='202509-ai-class.html'>2025/09/01</a></li>
         <li><a href='202508-asplos-cheddar.html'>2025/08/20</a></li>
@@ -63,48 +63,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='blog-container'>
       <section>
         <h1>
-          An SoK paper accepted at IEEE S&P 2026
+          An <span class='rh'>RoMe</span> paper accepted at <span class='hpca'>HPCA</span> 2026 (along with three other papers)
         </h1>
       </section>
 
       <section>
         <div class='section-main'>
-          <p>The first systematization of knowledge (SoK) paper from our group will be published at <a href='https://sp2026.ieee-security.org/' target='_blank'>IEEE S&P 2026</a> (47th IEEE Symposium on Security and Privacy)!</p>
+          <p>Delighted to announce that we have a second paper accepted at <a href='https://conf.researchr.org/home/hpca-2026' target='_blank'><span class='hpca'>HPCA</span> 2026</a>: <span class='rh'>RoMe</span>.</p>
 
-          <p>In the paper, we tried to categorize a good volume of architectural defenses against <span class='rh'>RowHammer</span> attacks through the lens of streaming algorithms.
-          As we wrote in the paper, the domain-level connection between streaming algorithms and <span class='rh'>RowHammer</span> defense was previously identified in <a class='paper' href='https://www.microarch.org/micro53/papers/738300a001.pdf'>the Graphene paper</a>, which I contributed as a co-author.
-          We extended this understanding, mapping the majority of the existing <span class='rh'>RowHammer</span> protection to the relevant algorithms.</p>
+          <dl>
+            <dt>The Problem</dt>
+            <dd>There is a fundamental granularity mismatch in modern AI hardware.
+              While HBM is the de facto standard for AI accelerators, its 32-byte access granularity has remained unchanged for over a decade.
+              In contrast, Large Language Models (LLMs) operate on hidden states and weight matrices that require streaming contiguous blocks ranging from kilobytes to megabytes.</dd>
 
-          <p>The paper consists of the following three primary contributions:</p>
-          <ol>
-            <li>We first categorized the architectural <span class='rh'>RowHammer</span> solutions into three types; tracker-based, tracker-less, and cooperative.</li>
-            <li>We offered guides in choosing the most suitable algorithm for given circumstances.</li>
-            <li>We provided case studies of several prior <span class='rh'>RowHammer</span> defenses and their corresponding algorithms, revealing previously unrecognized connections.</li>
-          </ol>
+            <dt>The Solution</dt>
+            <dd>We propose <span class='rh'>RoMe</span> (<span class='rh'>Ro</span>w-granularity-access <span class='rh'>Me</span>mory system).
+              <span class='rh'>RoMe</span> shifts DRAM access to row granularity, effectively eliminating the complex column and bank group structures required for fine-grained access.</dd>
+          </dl>
 
-          <p>I am really proud of my former student, Dr. <a href='../index.html#mjkim'>Michael Jaemin Kim</a> at <a href='https://www.meta.com/' target='_blank'>Meta</a>, for his heroic efforts to turn my pure wish into his thesis chapter, and then into an IEEE S&P paper, which showcases his dedication over several years in the research around <span class='rh'>RowHammer</span> mitigation solutions.
-          Kudos to Michael and my coauthors: Seungmin Baek, Jumin Kim, Hwayong Nam, and Nam Sung Kim!</p>
+          <p>By simplifying the interface, we can free up command/address pins and repurpose them to create additional memory channels.
+          The result is a 12.5% increase in bandwidth with minimal hardware overhead. Think of it as a &ldquo;huge-page only&rdquo; system for the terabyte-scale memory era.</p>
+
+          <p>Full credit goes to my students: Hwayong Nam, Seungmin Baek, Jumin Kim, and <a href='../index.html#mjkim'>Michael Jaemin Kim</a>.</p>
+
+          <p>See you all in Sydney!</p>
         </div>
       </section>
 
        <section>
-        <h2><a class='paper' href='https://arxiv.org/abs/2511.06192'><span class='rh'>RowHammer</span> SoK</a></h2>
+        <h2><a class='paper' href='https://arxiv.org/abs/2512.01541'><span class='rh'>RoMe</span></a></h2>
         <div class='section-main'>
           <h3>Title</h3>
-          <p>SoK: Systematizing a Decade of Architectural <span class='rh'>RowHammer</span> Defenses Through the Lens of Streaming Algorithms</p>
+          <p><span class='rh'>RoMe</span>: Row Granularity Access Memory System for Large Language Models</p>
 
           <h3>Authors</h3>
-          <p><a href='../index.html#mjkim'>Michael Jaemin Kim</a>, Seungmin Baek, Jumin Kim, Hwayong Nam, Nam Sung Kim, and Jung Ho Ahn</p>
+          <p>Hwayong Nam, Seungmin Baek, Jumin Kim, <a href='../index.html#mjkim'>Michael Jaemin Kim</a>, and Jung Ho Ahn</p>
      
           <h3>Abstract</h3>
-          <p>A decade after its academic introduction, <span class='rh'>RowHammer</span> (RH) remains a moving target that continues to challenge both the industry and academia. With its potential to serve as a critical attack vector, the ever-decreasing RH threshold now threatens DRAM process technology scaling, with a superlinearly increasing cost of RH protection solutions. Due to their generality and relatively lower performance costs, architectural RH solutions are the first line of defense against RH. However, the field is fragmented with varying views of the problem, terminologies, and even threat models.
-          In this paper, we systematize architectural RH defenses from the last decade through the lens of streaming algorithms. We provide a taxonomy that encompasses 48 different works. We map multiple architectural RH defenses to the classical streaming algorithms, which extends to multiple proposals that did not identify this link. We also provide two practitioner guides. The first guide analyzes which algorithm best fits a given RH<sub>TH</sub>, location, process technology, storage type, and mitigative action. The second guide encourages future research to consult existing algorithms when architecting RH defenses. We illustrate this by demonstrating how Reservoir-Sampling can improve related RH defenses, and also introduce StickySampling that can provide mathematical security that related studies do not guarantee.</p>
+          <p>Modern HBM-based memory systems have evolved over generations while retaining cache line granularity accesses. Preserving this fine granularity necessitated the introduction of bank groups and pseudo channels. These structures expand timing parameters and control overhead, significantly increasing memory controller scheduling complexity. Large language models (LLMs) now dominate deep learning workloads, streaming contiguous data blocks ranging from several kilobytes to megabytes per operation. In a conventional HBM-based memory system, these transfers are fragmented into hundreds of 32B cache line transactions. This forces the memory controller to employ unnecessarily intricate scheduling, leading to growing inefficiency.</p>
+          <p>To address this problem, we propose <span class='rh'>RoMe</span>. <span class='rh'>RoMe</span> accesses DRAM at row granularity and removes columns, bank groups, and pseudo channels from the memory interface. This design simplifies memory scheduling, thereby requiring fewer pins per channel. The freed pins are aggregated to form additional channels, increasing overall bandwidth by 12.5% with minimal extra pins. <span class='rh'>RoMe</span> demonstrates how memory scheduling logic can be significantly simplified for representative LLM workloads, and presents an alternative approach for next-generation HBM-based memory systems achieving increased bandwidth with minimal hardware overhead.</p>
         </div>
       </section>
 
 
       <footer>
-        <div class='index'><a href='202509-prospective-students.html'>&lt; prev</a> | <a href='202511-hpca-ive.html'>next &gt;</a></div> 
+        <div class='index'><a href='202511-hpca-ive.html'>&lt; prev</a> | next &gt;</div> 
         <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
         <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
         <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
