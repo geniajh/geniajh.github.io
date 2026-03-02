@@ -70,7 +70,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <section>
         <div class='section-main'>
           <p>My long-term research goal is to bridge the gap between the performance demands of emerging applications and the potential of massively parallel systems.
-          For the last several years, one of my primary thrusts has been the acceleration of fully homomorphic encryption (FHE), with a specific focus on the Cheon-Kim-Kim-Song (CKKS) scheme.
+          For the last several years, one of my primary thrusts has been the acceleration of fully <a href='https://homomorphicencryption.org/' target='_blank'>homomorphic encryption</a> (<a href='https://fhe.org/' target='_blank'>FHE</a>), with a specific focus on the Cheon-Kim-Kim-Song (<a href='https://ckks.org/' target='_blank'>CKKS</a>) scheme.
           CKKS is uniquely suited for privacy-preserving machine learning because it natively supports approximate arithmetic on real and complex numbers.</p>
 
           <p>However, FHE computations are notoriously slow, expanding data sizes severely and transforming simple arithmetic into complex modular polynomial operations.
@@ -116,9 +116,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>Phase 3: Algorithm-Architecture Co-Design for Private AI (2023&ndash;2024)</h2>
         <div class='section-main'>
           <p>To evaluate these systems, we actively deployed convolutional neural networks (CNNs) over FHE.
-          In our 2024 IEEE Access paper, HyPHEN, we observed that the mismatch between CNN feature maps and 1D ciphertext slots caused excessive homomorphic rotations. 
+          In <a href='../index.html#access-2024-hyphen'>our 2024 IEEE Access paper, HyPHEN</a>, we observed that the mismatch between CNN feature maps and 1D ciphertext slots caused excessive homomorphic rotations. 
           We introduced a hybrid packing method and polynomial activation functions to drastically cut the memory footprint and rotation overhead. 
-          We advanced this further in our CCS 2024 paper, NeuJeans, by proposing Coefficients-in-Slot (CinS) encoding. 
+          We advanced this further in <a href='../index.html#ccs-2024-neujeans'>our CCS 2024 paper, NeuJeans</a>, by proposing Coefficients-in-Slot (CinS) encoding. 
           This technique bypasses costly slot permutations and fuses convolutions directly with the bootstrapping process, enabling end-to-end ImageNet-scale CNN inference in seconds.</p>
         </div>
       </section>
@@ -127,15 +127,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>Phase 4: Breaking the Memory Wall on GPUs (2025&ndash;2026)</h2>
         <div class='section-main'>
           <p>As FHE algorithms evolved, we brought our insights back to commodity hardware.
-          In our <span class='hpca'>HPCA</span> 2025 paper, Anaheim, we debunked the assumption that NTT is the primary bottleneck on optimized GPUs. 
+          In <a href='../index.html#hpca-2025-anaheim'>our <span class='hpca'>HPCA</span> 2025 paper, Anaheim</a>, we debunked the assumption that NTT is the primary bottleneck on optimized GPUs. 
           We found that simple element-wise operations had become the new memory wall due to limited off-chip DRAM bandwidth. 
           Anaheim proposed a Processing-in-Memory (PIM) architecture and a software framework to offload these operations directly into DRAM, vastly improving energy efficiency.</p>
 
-          <p>Our efforts culminated in our <span class='asplos'>ASPLOS</span> 2026 paper, Cheddar, a swift, full-fledged GPU library for FHE.
+          <p>Our efforts culminated in <a href='../index.html#asplos-2026-cheddar'>our <span class='asplos'>ASPLOS</span> 2026 paper, Cheddar</a>, a swift, full-fledged GPU library for FHE.
           We designed a novel &ldquo;25-30 prime system&rdquo; to natively exploit the 32-bit integer datapath of modern GPUs, avoiding expensive 64-bit emulation. 
           Coupled with aggressive sequential and parallel kernel fusion, Cheddar outperforms custom FPGA designs and older GPU libraries by up to 4.45&times;, completing a ResNet-20 inference in just 0.72 seconds on a single GPU. 
-          Finally, as demonstrated in our recent microarchitectural studies (e.g., Theodosian @ ISPASS 2026), we have pushed modern GPUs so hard that the bottleneck has now shifted to the on-chip L2 cache bandwidth. 
-          By taming these final bottlenecks, we recently achieved a sub-25ms inference time for a 7-layer CNN on an off-the-shelf RTX 5090 GPU, matching the ambitious performance targets originally reserved for custom ASICs by the DARPA DPRIVE program.</p>
+          Finally, as demonstrated in our recent microarchitectural studies (e.g., <a href='../index.html#ispass-2026-theodosian'>Theodosian @ ISPASS 2026</a>), we have pushed modern GPUs so hard that the bottleneck has now shifted to the on-chip L2 cache bandwidth. 
+          By taming these final bottlenecks, we recently achieved <a href='../index.html#ieee-micro-hobbit'>a sub-25ms inference time for a 7-layer CNN on an off-the-shelf RTX 5090 GPU</a>, matching the ambitious performance targets originally reserved for custom ASICs by the <a href='https://www.darpa.mil/research/programs/data-protection-in-virtual-environments'>DARPA DPRIVE program</a>.</p>
         </div>
       </section>
 
