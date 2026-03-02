@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <title>Jung Ho Ahn - Post 2026/03/02</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NPDWL48G');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Metadata goes here -->
+    <meta charset='UTF-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../styles.css'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media='(prefers-color-scheme: dark)' href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.css"/>
+    <link rel="stylesheet" media='(prefers-color-scheme: light)' href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPDWL48G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- Content goes here -->
+    <div class='header-container'>
+      <header>
+        <h1><a href='../'>Jung Ho Ahn</a></h1>
+        <p><time datetime='2026-03-02'>Mar 2nd, 2026</p>
+      </header>
+    </div>
+
+    <nav>
+      <ul>
+        <li>2026/03/02</li>
+        <li><a href='202512-hpca-rome.html'>2025/12/02</a></li>
+        <li><a href='202511-hpca-ive.html'>2025/11/30</a></li>
+        <li><a href='202511-snp-rowhammer.html'>2025/11/14</a></li>
+        <li><a href='202509-prospective-students.html'>2025/09/16</a></li>
+        <li><a href='202509-ai-class.html'>2025/09/01</a></li>
+        <li><a href='202508-asplos-cheddar.html'>2025/08/20</a></li>
+        <li><a href='202508-google-scholar.html'>2025/08/17</a></li>
+        <li><a href='202508-cal-ssd.html'>2025/08/11</a></li>
+        <li><a href='202507-cal-prac.html'>2025/07/10</a></li>
+        <li>
+          <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
+          <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
+          <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
+          <a href='https://kr.linkedin.com/in/jung-ho-ahn-9876748' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png' class='linkedin'/></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class='blog-container'>
+      <section>
+        <h1>
+          Accelerating Fully Homomorphic Encryption (FHE): Bridging the Gap Between Cryptography and Computer Architecture
+        </h1>
+      </section>
+
+      <section>
+        <div class='section-main'>
+          <p>My long-term research goal is to bridge the gap between the performance demands of emerging applications and the potential of massively parallel systems.
+          For the last several years, one of my primary thrusts has been the acceleration of fully homomorphic encryption (FHE), with a specific focus on the Cheon-Kim-Kim-Song (CKKS) scheme.
+          CKKS is uniquely suited for privacy-preserving machine learning because it natively supports approximate arithmetic on real and complex numbers.</p>
+
+          <p>However, FHE computations are notoriously slow, expanding data sizes severely and transforming simple arithmetic into complex modular polynomial operations.
+          While application-specific integrated circuits (ASICs) may eventually rule the world once FHE algorithms fully mature, I firmly believe that GPUs are highly compelling platforms today due to their programmability and massive parallel compute capabilities.
+          My research traces a path from understanding fundamental bottlenecks on commercial hardware to proposing custom ASIC architectures, returning to co-designing state-of-the-art GPU and memory systems, and ultimately repeating the cycle.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Phase 1: Demystifying FHE on Conventional Hardware (2020&ndash;2021)</h2>
+        <div class='section-main'>
+          <p>My journey began with a rigorous, architecture-centric analysis of FHE workloads on existing CPUs and GPUs.
+          In <a href='../index.html#iiswc-2020-ntt'>our IISWC 2020 paper</a>, we tackled the Number Theoretic Transform (NTT), the most compute-intensive algorithm in FHE. 
+          We revealed that prior GPU implementations lacked a comprehensive analysis of the differences between NTT and standard Fast Fourier Transform (FFT), and we proposed optimizations like on-the-fly root-of-unity (so called twiddle factor) generation to maximize GPU memory bandwidth.</p>
+
+          <p>Building on this, <a href='../index.html#access-2021-hmult'>our 2021 IEEE Access paper</a> provided an in-depth dissection of FHE multiplication (HMult). 
+          We parallelized primary functions&mdash;such as NTT and the Chinese Remainder Theorem (CRT)&mdash;across multiple CPU cores and massive GPU threads, securing speedups of 2.06&times; and 4.05&times, respectively.</p>
+
+          <p>However, the true bottleneck in FHE is bootstrapping, the process required to refresh ciphertext noise and enable unbounded computation.
+          In <a href='../index.html#tches-2021-100x'>our CHES 2021 paper</a> (so called &lsquo;100x&rsquo;), we identified that bootstrapping is heavily constrained by global memory bandwidth rather than arithmetic logic. 
+          By devising memory-centric optimizations, including extensive kernel fusion and optimal decomposition number selection, we achieved over 100&times; faster bootstrapping on GPUs compared to single-thread CPUs.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Phase 2: Proposing Custom ASIC Accelerators (2022&ndash;2024)</h2>
+        <div class='section-main'>
+          <p>Insights from our GPU research made it clear that to achieve further magnitude-level improvements, we needed custom hardware.
+          <a href='../index.html#isca-2022-bts'>Our <span class='isca'>ISCA</span> 2022 paper, BTS</a>, introduced an ASIC architecture designed specifically for bootstrapping. We balanced the design such that the massive computation of FHE operations could be hidden behind the memory latency of loading evaluation keys.</p>
+
+          <p>Yet, off-chip memory bandwidth remained a severe bottleneck due to massive single-use data generation.
+          In <a href='../index.html#micro-2022-ark'>our <span class='micro'>MICRO</span> 2022 paper, ARK</a>, we introduced an algorithm-architecture co-design that used runtime data generation and inter-operation key reuse to eliminate 88% of off-chip memory accesses.</p>
+
+          <p>We also challenged the conventional wisdom of using 64-bit word lengths in FHE hardware.
+          In <a href='../index.html#isca-2023-sharp'>our <span class='isca'>ISCA</span> 2023 paper, SHARP</a>, we proved that a 36-bit word length provides robust workload precision while enabling a compact, hierarchical architecture.
+          This reduced chip area and power consumption by roughly half compared to prior monolithic ASICs. 
+          Recognizing that large monolithic ASICs face severe manufacturing yield limits, <a href='../index.html#seed-2024-cifher'>our IEEE SEED 2024 paper, CiFHER</a>, proposed a scalable multi-chip module (MCM) architecture.
+          By using a resizable core structure and optimizing die-to-die communication, we demonstrated that chiplet-based designs can rival monolithic ASIC performance at a fraction of the cost.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Phase 3: Algorithm-Architecture Co-Design for Private AI (2023&ndash;2024)</h2>
+        <div class='section-main'>
+          <p>To evaluate these systems, we actively deployed convolutional neural networks (CNNs) over FHE.
+          In our 2024 IEEE Access paper, HyPHEN, we observed that the mismatch between CNN feature maps and 1D ciphertext slots caused excessive homomorphic rotations. 
+          We introduced a hybrid packing method and polynomial activation functions to drastically cut the memory footprint and rotation overhead. 
+          We advanced this further in our CCS 2024 paper, NeuJeans, by proposing Coefficients-in-Slot (CinS) encoding. 
+          This technique bypasses costly slot permutations and fuses convolutions directly with the bootstrapping process, enabling end-to-end ImageNet-scale CNN inference in seconds.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Phase 4: Breaking the Memory Wall on GPUs (2025&ndash;2026)</h2>
+        <div class='section-main'>
+          <p>As FHE algorithms evolved, we brought our insights back to commodity hardware.
+          In our <span class='hpca'>HPCA</span> 2025 paper, Anaheim, we debunked the assumption that NTT is the primary bottleneck on optimized GPUs. 
+          We found that simple element-wise operations had become the new memory wall due to limited off-chip DRAM bandwidth. 
+          Anaheim proposed a Processing-in-Memory (PIM) architecture and a software framework to offload these operations directly into DRAM, vastly improving energy efficiency.</p>
+
+          <p>Our efforts culminated in our <span class='asplos'>ASPLOS</span> 2026 paper, Cheddar, a swift, full-fledged GPU library for FHE.
+          We designed a novel &ldquo;25-30 prime system&rdquo; to natively exploit the 32-bit integer datapath of modern GPUs, avoiding expensive 64-bit emulation. 
+          Coupled with aggressive sequential and parallel kernel fusion, Cheddar outperforms custom FPGA designs and older GPU libraries by up to 4.45&times;, completing a ResNet-20 inference in just 0.72 seconds on a single GPU. 
+          Finally, as demonstrated in our recent microarchitectural studies (e.g., Theodosian @ ISPASS 2026), we have pushed modern GPUs so hard that the bottleneck has now shifted to the on-chip L2 cache bandwidth. 
+          By taming these final bottlenecks, we recently achieved a sub-25ms inference time for a 7-layer CNN on an off-the-shelf RTX 5090 GPU, matching the ambitious performance targets originally reserved for custom ASICs by the DARPA DPRIVE program.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Summary</h2>
+        <div class='section-main'>
+          <p>While specialized FHE ASICs demonstrate remarkable peak efficiency, the rapid evolution of cryptographic algorithms risks making fixed hardware prematurely obsolete (this is evidenced by the announcement of Intel's programmable FHE accelerator, <a href='https://www.linkedin.com/pulse/12-labors-heracles-ro-cammarota-jmpnc/'>HERACLES, at ISSCC 2026</a>).
+          By deeply understanding the interaction between FHE mathematics and hardware microarchitecture, my research proves that intelligently optimized GPUs and memory systems can deliver real-time, practical privacy-preserving computation today.</p>
+        </div>
+      </section>
+
+      
+      <footer>
+        <div class='index'><a href='202512-hpca-rome.html'>&lt; prev</a> | next &gt;</div> 
+        <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
+        <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
+        <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
+        <a href='https://kr.linkedin.com/in/jung-ho-ahn-9876748' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png' class='linkedin'/></a>
+        <div class='copyright'>&copy; Jung Ho Ahn</div>
+      </footer>
+
+    </div>
+  </body>
+</html>
+
+
