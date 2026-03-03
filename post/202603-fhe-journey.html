@@ -65,6 +65,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1>
           Accelerating Fully Homomorphic Encryption (FHE): Bridging the Gap Between Cryptography and Computer Architecture
         </h1>
+
+        <p>(Latest update: <time datetime='2026-03-03'>Mar 3rd, 2026)</p>
       </section>
 
       <section>
@@ -133,8 +135,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <p>Our efforts culminated in <a href='../index.html#asplos-2026-cheddar'>our <span class='asplos'>ASPLOS</span> 2026 paper, Cheddar</a>, a swift, full-fledged GPU library for FHE.
           We designed a novel &ldquo;25-30 prime system&rdquo; to natively exploit the 32-bit integer datapath of modern GPUs, avoiding expensive 64-bit emulation. 
-          Coupled with aggressive sequential and parallel kernel fusion, Cheddar outperforms custom FPGA designs and older GPU libraries by up to 4.45&times;, completing a ResNet-20 inference in just 0.72 seconds on a single GPU. 
-          Finally, as demonstrated in our recent microarchitectural studies (e.g., <a href='../index.html#ispass-2026-theodosian'>Theodosian @ ISPASS 2026</a>), we have pushed modern GPUs so hard that the bottleneck has now shifted to the on-chip L2 cache bandwidth. 
+          Coupled with aggressive sequential and parallel kernel fusion, Cheddar outperforms custom FPGA designs and older GPU libraries by up to 4.45&times;, completing a ResNet-20 inference in just 0.72 seconds on a single GPU.</p>
+
+          <p>Furthermore, by building on Cheddar alongside <a href='https://arxiv.org/abs/2201.06699'>our earlier work, AESPA (arXiv 2022)</a>&mdash;which bypasses costly bootstrapping by approximating activation functions with square polynomials (requiring a slight, strategic modification to the original 7-layer CNN specification)&mdash;and introducing a new encrypted convolution method inspired by HyPHEN, we pushed the hardware even further.
+          As demonstrated in our recent microarchitectural studies (e.g., <a href='../index.html#ispass-2026-theodosian'>Theodosian @ ISPASS 2026</a>), we have pushed modern GPUs so hard that the bottleneck has now shifted to the on-chip L2 cache bandwidth. 
           By taming these final bottlenecks, we recently achieved <a href='../index.html#ieee-micro-hobbit'>a sub-25ms inference time for a 7-layer CNN on an off-the-shelf RTX 5090 GPU</a>, matching the ambitious performance targets originally reserved for custom ASICs by the <a href='https://www.darpa.mil/research/programs/data-protection-in-virtual-environments'>DARPA DPRIVE program</a>.</p>
         </div>
       </section>
