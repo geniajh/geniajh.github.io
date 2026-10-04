@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='ko'>
   <head>
-    <title>Jung Ho Ahn - Post 2025/12/02</title>
+    <title>Jung Ho Ahn - Post 2026/03/02</title>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -35,15 +35,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='header-container'>
       <header>
         <h1><a href='../'>Jung Ho Ahn</a></h1>
-        <p><time datetime='2025-12-02'>Dec 2nd, 2025</p>
+        <p><time datetime='2026-10-04'>Oct 4th, 2026</p>
       </header>
     </div>
 
     <nav>
       <ul>
-        <li><a href='202610-gsai.html'>2026/10/04</a></li>
+        <li>2026/10/04</li>
         <li><a href='202603-fhe-journey.html'>2026/03/02</a></li>
-        <li>2025/12/02</li>
+        <li><a href='202512-hpca-rome.html'>2025/12/02</a></li>
         <li><a href='202511-hpca-ive.html'>2025/11/30</a></li>
         <li><a href='202511-snp-rowhammer.html'>2025/11/14</a></li>
         <li><a href='202509-prospective-students.html'>2025/09/16</a></li>
@@ -63,52 +63,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class='blog-container'>
       <section>
         <h1>
-          A <span class='rh'>RoMe</span> paper accepted at <span class='hpca'>HPCA</span> 2026 (along with three other papers)
+          An Update on Joining Our Research Group
         </h1>
       </section>
 
       <section>
         <div class='section-main'>
-          <p>Delighted to announce that we have a second paper accepted at <a href='https://conf.researchr.org/home/hpca-2026' target='_blank'><span class='hpca'>HPCA</span> 2026</a>: <span class='rh'>RoMe</span>.</p>
+          <p>Until now, prospective students could join our research group through one of two programs at <a href='https://www.snu.ac.kr' target='_blank'>Seoul National University</a> (<span class='snu'>SNU</span>): the Department of Intelligence and Information (DoII) at the <a href='https://convergence.snu.ac.kr' target='_blank'>Graduate School of Convergence Science and Technology</a> (<span class='gscst'>GSCST</span>), or the Interdisciplinary Program in Artificial Intelligence (<a href='https://gsai.snu.ac.kr target='_blank''>IPAI</a>) at the College of Engineering.</p>
 
-          <dl>
-            <dt>The Problem</dt>
-            <dd>There is a fundamental granularity mismatch in modern AI hardware.
-              While HBM is the de facto standard for AI accelerators, its 32-byte access granularity has remained unchanged for over a decade.
-              In contrast, Large Language Models (LLMs) operate on hidden states and weight matrices that require streaming contiguous blocks ranging from kilobytes to megabytes.</dd>
+          <p>Starting in 2027, these two routes will become a single path through the <a href='https://snuai.snu.ac.kr' target='_blank'>Graduate School of Artificial Intelligence</a> (GSAI).
+          SNU will bring together DoII, IPAI, and the <a href='https://gsds.snu.ac.kr' target='_blank'>Graduate School of Data Science</a> under GSAI.</p>
 
-            <dt>The Solution</dt>
-            <dd>We propose <span class='rh'>RoMe</span> (<span class='rh'>Ro</span>w-granularity-access <span class='rh'>Me</span>mory system).
-              <span class='rh'>RoMe</span> shifts DRAM access to row granularity, effectively eliminating the complex column and bank group structures required for fine-grained access.</dd>
-          </dl>
-
-          <p>By simplifying the interface, we can free up command/address pins and repurpose them to create additional memory channels.
-          The result is a 12.5% increase in bandwidth with minimal hardware overhead. Think of it as a &ldquo;huge-page only&rdquo; system for the terabyte-scale memory era.</p>
-
-          <p>Full credit goes to my students: Hwayong Nam, Seungmin Baek, Jumin Kim, and <a href='../index.html#mjkim'>Michael Jaemin Kim</a>.</p>
-
-          <p>See you all in Sydney!</p>
+          <p>We&rsquo;re excited about the possibilities this change will bring, and we&rsquo;ll share more as they unfold.
+          For now, the key takeaway is simple: if you&rsquo;d like to join our research group, please apply to GSAI at <span class='snu'>SNU</span>.</p>
         </div>
       </section>
-
-       <section>
-        <h2><a class='paper' href='https://arxiv.org/abs/2512.01541'><span class='rh'>RoMe</span></a></h2>
-        <div class='section-main'>
-          <h3>Title</h3>
-          <p><span class='rh'>RoMe</span>: Row Granularity Access Memory System for Large Language Models</p>
-
-          <h3>Authors</h3>
-          <p>Hwayong Nam, Seungmin Baek, Jumin Kim, <a href='../index.html#mjkim'>Michael Jaemin Kim</a>, and Jung Ho Ahn</p>
-     
-          <h3>Abstract</h3>
-          <p>Modern HBM-based memory systems have evolved over generations while retaining cache line granularity accesses. Preserving this fine granularity necessitated the introduction of bank groups and pseudo channels. These structures expand timing parameters and control overhead, significantly increasing memory controller scheduling complexity. Large language models (LLMs) now dominate deep learning workloads, streaming contiguous data blocks ranging from several kilobytes to megabytes per operation. In a conventional HBM-based memory system, these transfers are fragmented into hundreds of 32B cache line transactions. This forces the memory controller to employ unnecessarily intricate scheduling, leading to growing inefficiency.</p>
-          <p>To address this problem, we propose <span class='rh'>RoMe</span>. <span class='rh'>RoMe</span> accesses DRAM at row granularity and removes columns, bank groups, and pseudo channels from the memory interface. This design simplifies memory scheduling, thereby requiring fewer pins per channel. The freed pins are aggregated to form additional channels, increasing overall bandwidth by 12.5% with minimal extra pins. <span class='rh'>RoMe</span> demonstrates how memory scheduling logic can be significantly simplified for representative LLM workloads, and presents an alternative approach for next-generation HBM-based memory systems achieving increased bandwidth with minimal hardware overhead.</p>
-        </div>
-      </section>
-
 
       <footer>
-        <div class='index'><a href='202511-hpca-ive.html'>&lt; prev</a> | <a href='202603-fhe-journey.html'>next &gt;</a></div> 
+        <div class='index'><a href='202603-fhe-journey.html'>&lt; prev</a> | next &gt;</div> 
         <a href='https://dblp.org/pid/a/JungHoAhn.html' target='_blank'><img src='https://dblp.org/img/dblp.icon.192x192.png' class='dblp'/></a>
         <a href='https://scholar.google.co.kr/citations?user=hjIKJrwAAAAJ&hl=en' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg' class='googlescholar'/></a>
         <a href='https://orcid.org/0000-0003-1733-1394' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ORCID_iD_32x32.svg' class='orcid'/></a>
